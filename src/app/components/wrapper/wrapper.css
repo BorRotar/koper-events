@@ -1,0 +1,14 @@
+.wrapper {
+  /*display: flex;*/
+  /*justify-content: space-around;*/
+  /*align-items: center;*/
+  /*flex-wrap: wrap; !* Allows items to wrap into new lines *!*/
+  /*position: relative; !* Enables absolute positioning within *!*/
+  width: 100vw;
+  height: 85vh;
+  /*padding: 1rem;*/
+  /*box-sizing: border-box;*/
+  background: yellow;
+  /*z-index: 10;*/
+  margin: auto;
+}

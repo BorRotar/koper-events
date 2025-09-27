@@ -13,7 +13,7 @@ export interface CardData {
   styleUrls: ['./card.css'] // Ensure the path is correct
 })
 export class Card implements OnInit {
-  data: CardData | null = null;
+  data: any | null = null;
 
   constructor(private route: ActivatedRoute) {}
 
@@ -23,9 +23,19 @@ export class Card implements OnInit {
       const cardData: { cardData: CardData } | null = resolvedData['cardData'];
       if (cardData && cardData.cardData) {
         this.data = cardData.cardData;
+        console.log(Object.keys(this.data))
+        // console.log(Object.values(this.data))
+        // console.log(this.data.count)
       } else {
         console.error('Missing or invalid cardData in resolved data');
-        this.data = null;
+        this.data = {
+          results: {
+          name: 'SWAPI vehicle',
+          },
+          title: 'Postgres title',
+          image: 'https://i5.walmartimages.com/seo/Handmadetneonsign-Aloha-Island-Palm-Tree-Neon-Sign-Beach-Neon-Wall-Art-Decor-Home-Wall-Decor_74cf0304-fee9-4768-b0ce-9975ab45b1ef.bb440113f66e0dd27f9583691455d210.jpeg'
+        };
+        console.log(this.data)
       }
     });
   }

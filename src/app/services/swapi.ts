@@ -12,6 +12,7 @@ export class SwapiService {
   constructor(private http: HttpClient) {}
 
   getResource(resource: string, id: string): Observable<any> {
+    // console.log(`Requested resource: ${resource}, ID: ${id}`);  // Log the received params
     return this.http.get(`${this.baseUrl}/${resource}/${id}`).pipe(
       catchError(this.handleError)
     );
@@ -26,6 +27,6 @@ export class SwapiService {
       // The backend returned an unsuccessful response code.
       errorMessage = `Server returned code: ${error.status}, error message is: ${error.message}`;
     }
-    return throwError(errorMessage);
+    return errorMessage;
   }
 }

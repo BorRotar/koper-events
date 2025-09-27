@@ -4,11 +4,11 @@
       <div class="image-container">
         <!--      <img src="assets/images/cyber.jpg" alt="Event image" fill/>-->
         <!--      <img src="../../../../public/cyber.jpg" [width]="400" [height]="400"/>-->
-        <img src="https://picjumbo.com/wp-content/uploads/cyberpunk-futuristic-city-free-photo-2210x2210.jpg" height="1440" width="2560"/>
+        <img [src]="data.image" height="1440" width="2560"/>
       </div>
       <div class="text-container">
-        <h1>{{ data.name }}</h1>
-        <p>Event description</p>
+        <h1>{{ data.results.name || data.results[0].name}}</h1>
+        <p>{{ data.title }}</p>
       </div>
     </article>
   } @else {
